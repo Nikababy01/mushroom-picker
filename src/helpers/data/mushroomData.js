@@ -181,13 +181,51 @@ const mushrooms = [
   },
 ];
 
-const basket = [];
+let basket = [];
 
 const getMushrooms = () => mushrooms;
 const getBasket = () => basket;
 
+const killAllMushrooms = () => {
+  basket = getBasket();
+  basket.splice(0, basket.length);
+  return basket;
+};
 
-const pickAMushroom = () => basket.push(mushrooms[Math.floor(Math.random() * mushrooms.length)]);
+const killTwoMushrooms = () => {
+  basket = getBasket();
+  if (basket.length < 2) {
+    basket.splice(0, basket.length);
+  } else {
+    basket.splice(0, 2);
+  }
+  return basket;
+};
 
+const magicWinsAll = () => {
+  mushrooms.forEach((mushroom) => {
+    if (mushroom.isDeadly === false && mushroom.isMagic === false && mushroom.isPoisonous === false) {
+      basket.push(mushroom);
+    }
+  });
+  return basket;
+};
+
+
+const pickAMushroom = () => {
+  const pickedMushroom = mushrooms[Math.floor(Math.random() * mushrooms.length)];
+  if (pickedMushroom.isDeadly) {
+    killAllMushrooms();
+    console.log('I killed All');
+  } else if (pickedMushroom.isPoisonous) {
+    killTwoMushrooms();
+    console.log('I killed two');
+  } else if (pickedMushroom.isMagic) {
+    magicWinsAll();
+    console.log('added all with magic');
+  } else {
+    basket.push(pickedMushroom);
+  }
+};
 
 export default { getMushrooms, getBasket, pickAMushroom };
