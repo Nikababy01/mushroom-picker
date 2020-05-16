@@ -1,7 +1,7 @@
 # Mushroom Picker
 
 ## Description
-This project showcases the use of react and using the features of State, Props, Render.
+This project showcases the use of react and using the features of State, Props, and Render.
 ### Feature List
 - Mushroom Garden
 - Mushroom Basket
