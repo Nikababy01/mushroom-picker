@@ -121,7 +121,7 @@ const mushrooms = [
     id: 'mushroom14',
     name: 'Chase',
     description: 'regular',
-    imgUrl: 'http://americanmushrooms.com/_t/Calvatia_cyathiformis_00_t.jpg',
+    imgUrl: 'https://i.pinimg.com/736x/f7/a4/30/f7a430ebeb04f09030e382d2c7a5c700.jpg',
     isMagic: false,
     isPoisonous: false,
     isDeadly: false,

@@ -26,7 +26,6 @@ pickAMushroomBtn = () => {
 }
 
 pickAMushroomEvent = (e) => {
-  console.log('clicked mushroom picker');
   e.preventDefault();
   this.pickAMushroomBtn();
 }
